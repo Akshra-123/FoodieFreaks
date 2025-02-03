@@ -93,6 +93,31 @@ class Home extends StatelessWidget {
     ),
   ),
 ),
+Positioned(
+  top: screenHeight * 0.90,
+  child:Row(
+    children: [
+      Text("Don't have account?",
+      style: TextStyle(color: Colors.grey,fontSize: 14),
+      ),
+      TextButton(
+  onPressed: () {
+    print("Signup Clicked!");
+    // Add navigation or action here
+  },
+  child: Text(
+    "Signup",
+    style: TextStyle(
+      color: Color.fromARGB(255, 236, 153, 8), // Orange color
+      fontSize: 14,
+      fontWeight: FontWeight.bold, // Optional: Makes text bold
+    ),
+  ),
+)
+
+    ],
+  ) 
+)
 
           ],
         ),
