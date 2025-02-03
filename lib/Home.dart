@@ -10,31 +10,94 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Get screen height dynamically
+    double screenHeight = MediaQuery.of(context).size.height;
+    
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
       body: Center(
-        child: Image.asset('assets/homeimg.png'),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            // Background Image
+            Positioned(
+              top: 0,
+              child: Container(
+                width: MediaQuery.of(context).size.width, // Make it full width
+                height: screenHeight * 0.6, // Take 60% of screen height
+                child: Image.asset(
+                  'assets/homeimg.png',
+                  fit: BoxFit.cover, // Ensures it covers the entire space
+                ),
+              ),
+            ),
+
+            // Dynamic Positioned Text
+            Positioned(
+              top: screenHeight * 0.54, // Move text 65% down the screen
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Text(
+                  "Prioritize Your Nutrition –\nIt Matters for a Health",
+                  style: TextStyle(
+                    color: const Color.fromARGB(255, 31, 31, 31),
+                    fontSize: screenHeight * 0.040, // Responsive font size
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          // Container(
+          //   height: 30,
+          // ),
+            Positioned(
+              top: screenHeight * 0.68, // Move text 65% down the screen
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Text(
+                  "our diet is a bank account. Good food \n choices are good investments",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 89, 88, 88),
+                    fontSize: screenHeight * 0.020, // Responsive font size
+                    fontWeight: FontWeight.w400,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              
+            ),
+            Positioned(
+  top: screenHeight * 0.78,
+  child: GestureDetector(
+    onTap: () {
+      print("Get Started Clicked!");
+      // Navigate to another page or perform an action
+    },
+    child: Container(
+      height: 40,
+      width: 130,
+      alignment: Alignment.center, // Centers the text inside
+      decoration: BoxDecoration(
+        color: Color.fromARGB(255, 237, 140, 3),
+        borderRadius: BorderRadius.circular(20), // Rounded edges
       ),
-      bottomNavigationBar:  MyNavBar(), // Call the NavBar here
+      child: Text(
+        "Get Started",
+        style: TextStyle(
+          color: Colors.white, // Text color for contrast
+          fontWeight: FontWeight.bold,
+          fontSize: 16,
+        ),
+        textAlign: TextAlign.center, // Ensures centered text
+      ),
+    ),
+  ),
+),
+
+          ],
+        ),
+      ),
+      // bottomNavigationBar: MyNavBar(), // Call the NavBar here
     );
   }
 }
-
-// Custom Navigation Bar
-// class Munabbare extends StatelessWidget {
-//   const Munabbare({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return BottomNavigationBar(
-//       backgroundColor: Colors.black,
-//       selectedItemColor: Colors.orange,
-//       unselectedItemColor: Colors.grey,
-//       items: const [
-//         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-//         BottomNavigationBarItem(icon: Icon(Icons.qr_code_scanner), label: 'Scan'),
-//         BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-//       ],
-//     );
-//   }
-// }
