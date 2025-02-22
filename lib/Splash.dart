@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_flutter/Home.dart';
+import 'package:new_flutter/Signup.dart';
+import 'package:new_flutter/login.dart';
 
 class MyWidget extends StatefulWidget {
   const MyWidget({super.key});
@@ -19,7 +21,7 @@ class _MyWidgetState extends State<MyWidget> {
     await Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const Home()), // Replace `Home()` with your actual Home widget
+        MaterialPageRoute(builder: (context) => const Signup()), // Replace `Home()` with your actual Home widget
       );
     });
   }
