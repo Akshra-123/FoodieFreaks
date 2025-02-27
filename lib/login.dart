@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:new_flutter/Signup.dart';
 
 class login extends StatelessWidget {
   const login({super.key});
@@ -30,26 +31,26 @@ class login extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 50),
+                    const SizedBox(height: 100),
 
                     // Google Login Icon
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            // TODO: Add Google Sign-In functionality
-                          },
-                          child: const FaIcon(
-                            FontAwesomeIcons.google,
-                            size: 30,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.center,
+                    //   children: [
+                    //     GestureDetector(
+                    //       onTap: () {
+                    //         // TODO: Add Google Sign-In functionality
+                    //       },
+                    //       child: const FaIcon(
+                    //         FontAwesomeIcons.google,
+                    //         size: 30,
+                    //         color: Colors.white,
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 90),
 
                     // Email Input
                     TextField(
@@ -64,7 +65,7 @@ class login extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 35),
 
                     // Password Input
                     TextField(
@@ -80,11 +81,11 @@ class login extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 50),
 
                     // Login Button
                     SizedBox(
-                      width: double.infinity,
+                      width: 350,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color.fromARGB(255, 73, 73, 72),
@@ -97,8 +98,8 @@ class login extends StatelessWidget {
                         child: const Text(
                           "LOGIN",
                           style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
                             color: Colors.white,
                           ),
                         ),
@@ -121,7 +122,13 @@ class login extends StatelessWidget {
 
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => Signup()),
+  );
+},
+
                             child: const Text(
                               "Signup",
                               style: TextStyle(

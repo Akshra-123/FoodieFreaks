@@ -21,7 +21,7 @@ class _MyWidgetState extends State<MyWidget> {
     await Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const Signup()), // Replace `Home()` with your actual Home widget
+        MaterialPageRoute(builder: (context) => const login()), // Replace `Home()` with your actual Home widget
       );
     });
   }

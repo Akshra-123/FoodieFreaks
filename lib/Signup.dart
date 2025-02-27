@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:new_flutter/login.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
@@ -30,26 +31,26 @@ class Signup extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 50),
+                    const SizedBox(height: 90),
 
                     // Google Signup Icon
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            // TODO: Add Google Sign-In functionality
-                          },
-                          child: const FaIcon(
-                            FontAwesomeIcons.google,
-                            size: 30,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
+                    // Row(
+                    //   mainAxisAlignment: MainAxisAlignment.center,
+                    //   children: [
+                    //     GestureDetector(
+                    //       onTap: () {
+                    //         // TODO: Add Google Sign-In functionality
+                    //       },
+                    //       child: const FaIcon(
+                    //         FontAwesomeIcons.google,
+                    //         size: 30,
+                    //         color: Colors.white,
+                    //       ),
+                    //     ),
+                    //   ],
+                    // ),
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 100),
 
                     // Email Input
                     TextField(
@@ -66,6 +67,7 @@ class Signup extends StatelessWidget {
 
                     const SizedBox(height: 15),
                      TextField(
+                      
                       obscureText: true,
                       decoration: InputDecoration(
                         prefixIcon: const Icon(Icons.person, color: Colors.grey),
@@ -134,7 +136,12 @@ class Signup extends StatelessWidget {
 
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => login()),
+  );
+},
                             child: const Text(
                               "login",
                               style: TextStyle(
@@ -162,18 +169,18 @@ class Signup extends StatelessWidget {
             child: Column(
               children: const [
                 Text(
-                  "Welcome User",
+                  "Getting Started",
                   style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 25,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
                 SizedBox(height: 5),
                 Text(
-                  "Login through other means",
+                  "create account to continue",
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 15,
                     color: Colors.white70,
                   ),
                 ),
