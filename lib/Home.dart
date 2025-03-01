@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:new_flutter/Navbar.dart';
+import 'package:new_flutter/Signup.dart';
 
 void main() {
   runApp(const MaterialApp(home: Home()));
@@ -40,7 +41,7 @@ class Home extends StatelessWidget {
                   "Prioritize Your Nutrition –\nIt Matters for a Health",
                   style: TextStyle(
                     color: const Color.fromARGB(255, 31, 31, 31),
-                    fontSize: screenHeight * 0.040, // Responsive font size
+                    fontSize: screenHeight * 0.035, // Responsive font size
                     fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.center,
@@ -55,7 +56,7 @@ class Home extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: Text(
-                  "our diet is a bank account. Good food \n choices are good investments",
+                  "Our diet is a bank account. Good food \n choices are good investments",
                   style: TextStyle(
                     color: Color.fromARGB(255, 89, 88, 88),
                     fontSize: screenHeight * 0.020, // Responsive font size
@@ -102,7 +103,10 @@ Positioned(
       ),
       TextButton(
   onPressed: () {
-    print("Signup Clicked!");
+   Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => Signup()),
+  );
     // Add navigation or action here
   },
   child: Text(

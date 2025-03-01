@@ -154,7 +154,7 @@ class login extends StatelessWidget {
   left: MediaQuery.of(context).size.width * 0.05, // 5% from the left
   
             child: Column(
-              children: const [
+              children: [
                 Text(
                   "Welcome User",
                   style: TextStyle(
@@ -171,6 +171,33 @@ class login extends StatelessWidget {
                     color: Colors.white70,
                   ),
                 ),
+                Row(
+                     mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        SizedBox(width: 10),
+                        IconButton(
+                          onPressed: () {
+                            print('Facebook clicked');
+                          },
+                          icon: FaIcon(
+                            FontAwesomeIcons.google,
+                            size: 30,
+                            color: Colors.blue,
+                          ),
+                        ),
+                        const SizedBox(width: 2),
+                        IconButton(
+                          onPressed: () {
+                            print('Google clicked');
+                          },
+                          icon: FaIcon(
+                            FontAwesomeIcons.facebook,
+                            size: 30,
+                            color: Colors.red,
+                          ),
+                        ),
+                      ],
+                    ),
               ],
             ),
           ),
