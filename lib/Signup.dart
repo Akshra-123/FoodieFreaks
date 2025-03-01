@@ -66,11 +66,11 @@ class Signup extends StatelessWidget {
                     ),
 
                     const SizedBox(height: 15),
-                     TextField(
-                      
+                    TextField(
                       obscureText: true,
                       decoration: InputDecoration(
-                        prefixIcon: const Icon(Icons.person, color: Colors.grey),
+                        prefixIcon:
+                            const Icon(Icons.person, color: Colors.grey),
                         hintText: "Enter your username",
                         filled: true,
                         fillColor: Colors.white,
@@ -79,7 +79,7 @@ class Signup extends StatelessWidget {
                         ),
                       ),
                     ),
- const SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     // Password Input
                     TextField(
                       obscureText: true,
@@ -119,37 +119,39 @@ class Signup extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 16),
 
                     // Signup Link
 
-
                     Center(
                       child: Row(
-                        mainAxisSize: MainAxisSize.min, // Makes the row take only necessary space
-        mainAxisAlignment: MainAxisAlignment.center, // Centers the children inside the row
+                        mainAxisSize: MainAxisSize
+                            .min, // Makes the row take only necessary space
+                        mainAxisAlignment: MainAxisAlignment
+                            .center, // Centers the children inside the row
                         children: [
-                          Text("Already have Account?",
-                          style: TextStyle(color: Colors.white, fontWeight:FontWeight.w100),
-                          textAlign: TextAlign.center,
-                         
-
+                          Text(
+                            "Already have Account?",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w100),
+                            textAlign: TextAlign.center,
                           ),
                           GestureDetector(
                             onTap: () {
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => login()),
-  );
-},
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => login()),
+                              );
+                            },
                             child: const Text(
                               "login",
                               style: TextStyle(
                                 color: Color.fromARGB(255, 249, 136, 7),
                                 fontWeight: FontWeight.bold,
-                                
                               ),
-                               textAlign: TextAlign.center,
+                              textAlign: TextAlign.center,
                             ),
                           ),
                         ],
@@ -164,10 +166,10 @@ class Signup extends StatelessWidget {
           // Welcome Text Above the Container
           Positioned(
             top: MediaQuery.of(context).size.height * 0.35, // 30% from the top
-  left: MediaQuery.of(context).size.width * 0.05, // 5% from the left
-  
+            left: MediaQuery.of(context).size.width * 0.05, // 5% from the left
+
             child: Column(
-              children: const [
+              children: [
                 Text(
                   "Getting Started",
                   style: TextStyle(
@@ -176,7 +178,7 @@ class Signup extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 5),
+                SizedBox(height: 2),
                 Text(
                   "create account to continue",
                   style: TextStyle(
@@ -184,6 +186,34 @@ class Signup extends StatelessWidget {
                     color: Colors.white70,
                   ),
                 ),
+                SizedBox(height: 9),
+                Row(
+                     mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                       const SizedBox(width: 10),
+                        IconButton(
+                          onPressed: () {
+                            print('Facebook clicked');
+                          },
+                          icon: FaIcon(
+                            FontAwesomeIcons.google,
+                            size: 30,
+                            color: Colors.blue,
+                          ),
+                        ),
+                        const SizedBox(width: 2),
+                        IconButton(
+                          onPressed: () {
+                            print('Google clicked');
+                          },
+                          icon: FaIcon(
+                            FontAwesomeIcons.facebook,
+                            size: 30,
+                            color: Colors.red,
+                          ),
+                        ),
+                      ],
+                    ),
               ],
             ),
           ),
