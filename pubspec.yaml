@@ -26,4 +26,7 @@ flutter:
   assets:
     - assets/splash.png
     - assets/homeimg.png
+    - assets/lays.png
+    - assets/fruit_salad.png
+    
 
