@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_flutter/Scrol.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -20,83 +21,55 @@ class Searchbar extends StatelessWidget {
           onPressed: () {},
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Search Bar
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: "Search..",
-                      hintStyle: TextStyle(color: Colors.grey),
-                      prefixIcon: Icon(Icons.search, color: Colors.grey),
-                      filled: true,
-                      fillColor: Colors.grey[200],
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
-                  ),
+     body: Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+  child: Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      // Search Bar
+      Row(
+        children: [
+          Expanded(
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: "Search..",
+                hintStyle: TextStyle(color: Colors.grey),
+                prefixIcon: Icon(Icons.search, color: Colors.grey),
+                filled: true,
+                fillColor: Colors.grey[200],
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide.none,
                 ),
-                SizedBox(width: 10),
-                Container(
-                  padding: EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Icon(Icons.search, color: Colors.white),
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-
-            // Horizontal Scrollable Cards
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  FoodCard(
-                    title: "Fruit Salad",
-                    description: "Lorem ipsum dolor sit amet, consectetur...",
-                    imagePath: "assets/fruit_salad.png",
-                  ),
-                  SizedBox(width: 10),
-                  FoodCard(
-                    title: "Fruit Mix",
-                    description: "A delicious combination of fresh fruits...",
-                    imagePath: "assets/fruit_salad.png",
-                  ),
-                ],
               ),
             ),
-            SizedBox(height: 20),
-
-            // Searched Items List
-            Text("Searched items", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            SizedBox(height: 10),
-            Expanded(
-              child: ListView(
-                children: [
-                  SearchedItem(title: "Lays Chips", calories: "40%", imagePath: "assets/lays.png"),
-                  SearchedItem(title: "Lays Chips", calories: "40%", imagePath: "assets/lays.png"),
-                  SearchedItem(title: "Lays Chips", calories: "40%", imagePath: "assets/lays.png"),
-                ],
-              ),
+          ),
+          SizedBox(width: 10),
+          Container(
+            padding: EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.orange,
+              borderRadius: BorderRadius.circular(15),
             ),
-          ],
-        ),
+            child: Icon(Icons.search, color: Colors.white),
+          ),
+        ],
       ),
+      SizedBox(height: 5),
+
+      // FIX: Prevent infinite size error
+      Expanded(
+        child: Scroll(), // Wrap Scroll() with Expanded
+      ),
+    ],
+  ),
+),
+
     );
   }
 }
 
-// Card Widget for Food Items
+
 class FoodCard extends StatelessWidget {
   final String title;
   final String description;
