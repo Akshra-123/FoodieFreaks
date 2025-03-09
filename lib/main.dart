@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_flutter/Camera.dart';
 import 'package:new_flutter/Splash.dart';
 
 void main() {
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  MyWidget(),
+      home: Camera(),
     );
   }
 }
