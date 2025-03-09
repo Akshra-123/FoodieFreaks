@@ -1,16 +1,19 @@
-# new_flutter
+# Food Freaks
 
 A new Flutter project.
 
-## Getting Started
+## Solution Challenge Idea💡
 
-This project is a starting point for a Flutter application.
+Food Freaks – AI-Powered Food Scanner
 
-A few resources to get you started if this is your first Flutter project:
+Food Freaks is an innovative health and nutrition app designed for health-conscious individuals. Using advanced AI models and OpenCV, the app can accurately detect food items from images and provide detailed nutritional information, including:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+✅ Calorie Count – Know the exact energy content of your food.
+✅ Macronutrient Breakdown – Get insights into proteins, carbs, and fats.
+✅ Allergen Warnings – Identify potential allergens in scanned food.
+✅ Health Insights – Receive recommendations based on your dietary preferences.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+With Food Freaks, making informed food choices has never been easier! Simply scan your meal, and let AI do the rest.
+
+Built with Flutter for a seamless user experience. 🚀
+
